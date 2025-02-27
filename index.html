@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Cultivation</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #4CAF50, #2E8B57);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        .flower-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .flower {
+            width: calc(33.33% - 20px);
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .flower:hover {
+            background: #4CAF50;
+            color: white;
+            transform: translateY(-5px);
+        }
+        @media (max-width: 768px) {
+            .flower {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .flower {
+                width: 100%;
+            }
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            outline: none;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            background: linear-gradient(90deg, #4CAF50, #2E8B57);
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            transition: background 0.3s ease-in-out;
+        }
+        .contact-form button:hover {
+            background: #2E8B57;
+        }
+        .flower-details {
+            display: none;
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .flower-details img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Flower Cultivation Project
+    </header>
+    <div class="container">
+        <h2>Types of Flowers</h2>
+        <div class="flower-list">
+            <div class="flower" onclick="showDetails('Rose', 'rose.jpg')">Rose</div>
+            <div class="flower" onclick="showDetails('Marigold', 'marigold.jpg')">Marigold</div>
+            <div class="flower" onclick="showDetails('Jasmine', 'jasmine.jpg')">Jasmine</div>
+            <div class="flower" onclick="showDetails('Tulip', 'tulip.jpg')">Tulip</div>
+            <div class="flower" onclick="showDetails('Orchid', 'orchid.jpg')">Orchid</div>
+            <div class="flower" onclick="showDetails('Sunflower', 'sunflower.jpg')">Sunflower</div>
+        </div>
+    </div>
+    <div class="container flower-details" id="flowerDetails">
+        <h2 id="flowerTitle"></h2>
+        <img id="flowerImage" src="" alt="Flower Image">
+        <p id="flowerDescription"></p>
+        <p id="flowerFarming"></p>
+        <p id="flowerProtection"></p>
+        <p id="flowerFertilization"></p>
+        <p id="flowerUses"></p>
+        <p id="flowerMarket"></p>
+    </div>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="responseMessage" style="color: green; display: none;">Thank you for contacting us!</p>
+    </div>
+</body>
+<script>
+    function showDetails(name, image) {
+        const details = {
+            'Rose': {
+                description: 'Roses are widely cultivated for their fragrance and beauty.',
+                farming: 'Grown in well-drained soil with adequate sunlight.',
+                protection: 'Protected from pests using organic pesticides.',
+                fertilization: 'Fertilized with compost and organic matter.',
+                uses: 'Used in perfumes, decorations, and skincare products.',
+                market: 'Highly demanded in floral and cosmetic industries.'
+            },
+            'Marigold': {
+                description: 'Marigolds are bright flowers used in religious and ornamental purposes.',
+                farming: 'Requires full sun and moderate watering.',
+                protection: 'Treated with neem oil for pest control.',
+                fertilization: 'Enriched with nitrogen-based fertilizers.',
+                uses: 'Used for garlands and traditional medicine.',
+                market: 'Popular in festive and religious ceremonies.'
+            },
+            'Jasmine': {
+                description: 'Jasmine is known for its sweet fragrance.',
+                farming: 'Prefers warm climates with well-drained soil.',
+                protection: 'Kept safe from fungal infections.',
+                fertilization: 'Boosted with phosphorus-based fertilizers.',
+                uses: 'Used in essential oils and perfumes.',
+                market: 'High demand in fragrance and therapeutic industries.'
+            },
+            'Tulip': {
+                description: 'Tulips bloom in spring and are popular ornamental flowers.',
+                farming: 'Grown from bulbs in well-drained soil.',
+                protection: 'Protected from rodents and harsh weather.',
+                fertilization: 'Requires potassium-rich fertilizers.',
+                uses: 'Used for landscaping and gifting.',
+                market: 'Popular in floriculture and gifting industries.'
+            },
+            'Orchid': {
+                description: 'Orchids are exotic flowers requiring special care.',
+                farming: 'Grown in controlled environments with humidity control.',
+                protection: 'Requires protection from root rot.',
+                fertilization: 'Fertilized with balanced micronutrients.',
+                uses: 'Used in ornamental gardens and flower arrangements.',
+                market: 'Highly valued in premium floral markets.'
+            },
+            'Sunflower': {
+                description: 'Sunflowers are bright and known for their edible seeds.',
+                farming: 'Needs full sun and well-drained soil.',
+                protection: 'Guarded against birds and insects.',
+                fertilization: 'Boosted with nitrogen and phosphorus fertilizers.',
+                uses: 'Used for oil extraction and decoration.',
+                market: 'Demanded in food and oil industries.'
+            }
+        };
+        
+        if (details[name]) {
+            document.getElementById('flowerTitle').innerText = name;
+            document.getElementById('flowerImage').src = image;
+            document.getElementById('flowerDescription').innerText = details[name].description;
+            document.getElementById('flowerFarming').innerText = 'Farming: ' + details[name].farming;
+            document.getElementById('flowerProtection').innerText = 'Protection: ' + details[name].protection;
+            document.getElementById('flowerFertilization').innerText = 'Fertilization: ' + details[name].fertilization;
+            document.getElementById('flowerUses').innerText = 'Uses: ' + details[name].uses;
+            document.getElementById('flowerMarket').innerText = 'Market: ' + details[name].market;
+            document.getElementById('flowerDetails').style.display = 'block';
+        }
+    }
+</script>
+</html> 
+
