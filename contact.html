@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flower Cultivation</title>
+    <title>Contact - Flower Cultivation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -36,29 +36,26 @@
         </div>
     </header>
 
-    <div class="flowers__container">
-        <div class="container">
-            <h2>Types of Flowers</h2>
-            <div class="flower-list">
-                <div class="flower" onclick="showDetails('Rose', 'rose.jpg')">Rose</div>
-                <div class="flower" onclick="showDetails('Marigold', 'marigold.jpg')">Marigold</div>
-                <div class="flower" onclick="showDetails('Jasmine', 'jasmine.jpg')">Jasmine</div>
-                <div class="flower" onclick="showDetails('Tulip', 'tulip.jpg')">Tulip</div>
-                <div class="flower" onclick="showDetails('Orchid', 'orchid.jpg')">Orchid</div>
-                <div class="flower" onclick="showDetails('Sunflower', 'sunflower.jpg')">Sunflower</div>
+    <!-- Contact Page -->
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="input-group">
+                <input type="text" id="name" placeholder="Your Name" required>
             </div>
-        </div>
 
-        <div class="container flower-details" id="flowerDetails">
-            <h2 id="flowerTitle"></h2>
-            <img id="flowerImage" src="" alt="Flower Image">
-            <p id="flowerDescription"></p>
-            <p id="flowerFarming"></p>
-            <p id="flowerProtection"></p>
-            <p id="flowerFertilization"></p>
-            <p id="flowerUses"></p>
-            <p id="flowerMarket"></p>
-        </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Your Email" required>
+            </div>
+
+            <div class="input-group">
+                <textarea id="message" placeholder="Your Message" required></textarea>
+            </div>
+
+            <button type="submit">Send</button>
+        </form>
+
+        <p id="responseMessage" class="response-message">Thank you for contacting us!</p>
     </div>
 
     <script src="script.js"></script>

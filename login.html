@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flower Cultivation</title>
+    <title>Login - Flower Cultivation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <!-- Header section -->
     <header>
         <h1 class="header__title">Flower Cultivation Project</h1>
@@ -36,29 +37,26 @@
         </div>
     </header>
 
-    <div class="flowers__container">
-        <div class="container">
-            <h2>Types of Flowers</h2>
-            <div class="flower-list">
-                <div class="flower" onclick="showDetails('Rose', 'rose.jpg')">Rose</div>
-                <div class="flower" onclick="showDetails('Marigold', 'marigold.jpg')">Marigold</div>
-                <div class="flower" onclick="showDetails('Jasmine', 'jasmine.jpg')">Jasmine</div>
-                <div class="flower" onclick="showDetails('Tulip', 'tulip.jpg')">Tulip</div>
-                <div class="flower" onclick="showDetails('Orchid', 'orchid.jpg')">Orchid</div>
-                <div class="flower" onclick="showDetails('Sunflower', 'sunflower.jpg')">Sunflower</div>
+    <!-- Login -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
             </div>
-        </div>
 
-        <div class="container flower-details" id="flowerDetails">
-            <h2 id="flowerTitle"></h2>
-            <img id="flowerImage" src="" alt="Flower Image">
-            <p id="flowerDescription"></p>
-            <p id="flowerFarming"></p>
-            <p id="flowerProtection"></p>
-            <p id="flowerFertilization"></p>
-            <p id="flowerUses"></p>
-            <p id="flowerMarket"></p>
-        </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="input-group">
+                <button type="submit" class="login__button">Login</button>
+            </div>
+
+            <p class="signup-link">Don't have an account? <a href="#">Sign Up</a></p>
+        </form>
     </div>
 
     <script src="script.js"></script>

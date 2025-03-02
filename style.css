@@ -1,0 +1,391 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+/* Header Section - Fixed at Top */
+header {
+    background: linear-gradient(90deg, #4CAF50, #2E8B57);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header__title {
+    padding-left: 10px;
+}
+
+/* Adjust body content to avoid overlapping with fixed header */
+body {
+    padding-top: 80px; /* Adjusted for header height */
+}
+
+/* Navbar Links */
+.header__nav {
+    padding-right: 10px;
+}
+
+.header__nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.header__nav__list a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+.header__nav__list a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+/* Hamburger Icon (For Mobile) */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin-left: auto; /* Pushes the hamburger icon to the right */
+    padding-right: 10px;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -60%;
+    width: 60%;
+    height: 100vh;
+    background: #2E8B57;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    transition: right 0.3s ease-in-out;
+}
+
+/* Close Button - No full background */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background: none;  /* Removes background */
+    border: none;      /* Removes default border */
+    color: white;
+    cursor: pointer;
+    padding: 5px;      /* Reduces padding */
+    width: auto;       /* Ensures it does not stretch */
+    display: inline-block; /* Prevents full-width block behavior */
+}
+
+.close-btn:hover {
+    background: none;  /* Removes background */
+}
+
+
+/* Mobile Navigation List */
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-nav ul li {
+    margin: 20px 0;
+}
+
+.mobile-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.mobile-nav ul li a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+/* Page Content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive Flower Grid */
+.flower-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.flower {
+    width: calc(33.33% - 20px);
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.flower:hover {
+    background: #4CAF50;
+    color: white;
+    transform: translateY(-5px);
+}
+
+
+.flower-details {
+    display: none;
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.flower-details img {
+    /* max-width: 100%; */
+    width: 350px;
+    height: 250px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flowers__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* Contact Page Styling */
+.contact-container {
+    max-width: 350px;
+    width: 90%;
+    margin: 50px auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Form Fields */
+.contact-form .input-group {
+    margin-bottom: 15px;
+}
+
+/* Apply box-sizing to include padding and border in width */
+.contact-form input,
+.contact-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 120px;
+}
+
+/* Focus styles */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 2px solid #4CAF50;
+}
+
+/* Button */
+.contact-form button {
+    background: linear-gradient(90deg, #4CAF50, #2E8B57);
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background: #2E8B57;
+}
+
+/* Success Message */
+.response-message {
+    color: green;
+    display: none;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+
+/* Login Container */
+.login-container {
+    background: white;
+    color: #2E8B57;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 350px;
+    margin: 50px auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Heading */
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2E8B57;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+}
+
+.input-group input:focus {
+    border: 2px solid #2E8B57;
+}
+
+/* Button */
+.login__button {
+    background: #2E8B57;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login__button:hover {
+    background: #4CAF50;
+}
+
+/* Signup Link */
+.signup-link {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.signup-link a {
+    color: #2E8B57;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    /* Show Hamburger Icon */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide Normal Nav on Mobile */
+    .header__nav {
+        display: none;
+    }
+
+    /* Adjust Flower Grid for Mobile */
+    .flower {
+        width: calc(50% - 20px);
+    }
+
+    .flowers__container {
+        flex-wrap: wrap;
+    }
+
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .mobile-nav {
+        right: -100%;
+        width: 70%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .flower {
+        width: 100%;
+    }
+
+    .mobile-nav {
+        width: 80%;
+    }
+}
