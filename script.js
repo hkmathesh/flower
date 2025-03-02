@@ -54,12 +54,12 @@ function showDetails(name, image) {
     if (details[name]) {
         document.getElementById('flowerTitle').innerText = name;
         document.getElementById('flowerImage').src = './src/images/' + image;;
-        document.getElementById('flowerDescription').innerText = details[name].description;
-        document.getElementById('flowerFarming').innerText = 'Farming: ' + details[name].farming;
-        document.getElementById('flowerProtection').innerText = 'Protection: ' + details[name].protection;
-        document.getElementById('flowerFertilization').innerText = 'Fertilization: ' + details[name].fertilization;
-        document.getElementById('flowerUses').innerText = 'Uses: ' + details[name].uses;
-        document.getElementById('flowerMarket').innerText = 'Market: ' + details[name].market;
+        document.getElementById('flowerDescription').innerHTML = `<span style="font-weight: bold;">Description: </span>` + details[name].description;
+        document.getElementById('flowerFarming').innerHTML = `<span style="font-weight: bold;">Farming: </span>` + details[name].farming;
+        document.getElementById('flowerProtection').innerHTML = `<span style="font-weight: bold;">Protection: </span>` + details[name].protection;
+        document.getElementById('flowerFertilization').innerHTML = `<span style="font-weight: bold;">Fertilization: </span>` + details[name].fertilization;
+        document.getElementById('flowerUses').innerHTML = `<span style="font-weight: bold;">Uses: </span>` + details[name].uses;
+        document.getElementById('flowerMarket').innerHTML = `<span style="font-weight: bold;">Market: </span>` + details[name].market;
         document.getElementById('flowerDetails').style.display = 'block';
     }
 }

@@ -167,7 +167,6 @@ body {
     transform: translateY(-5px);
 }
 
-
 .flower-details {
     display: none;
     background: white;
@@ -178,8 +177,11 @@ body {
     text-align: center;
 }
 
+.flower-info {
+    text-align: left;
+}
+
 .flower-details img {
-    /* max-width: 100%; */
     width: 350px;
     height: 250px;
     margin-bottom: 15px;
@@ -193,6 +195,7 @@ body {
     align-items: center;
     gap: 20px;
 }
+
 
 
 /* Contact Page Styling */
